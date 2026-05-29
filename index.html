@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Well Control - Remote Shutdown Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <h1>🌾 Well Control</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#references">References</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Remote Irrigation Well Shutdown System</h1>
+            <p>An innovative, affordable, and reliable LoRa-based remote control system for irrigation wells</p>
+            <div class="hero-buttons">
+                <a href="#solution" class="btn btn-primary">Explore Solution</a>
+                <a href="#references" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM STATEMENT -->
+    <section id="problem" class="problem">
+        <div class="container">
+            <h2>The Problem</h2>
+            <div class="problem-content">
+                <div class="problem-text">
+                    <p>Irrigation wells do not have effective remote shutdown switches. Most do not have any remote switches because the ones that are available are:</p>
+                    <ul>
+                        <li><strong>Not Reliable</strong> - Existing systems frequently fail</li>
+                        <li><strong>Expensive</strong> - Current solutions are cost-prohibitive</li>
+                        <li><strong>Dangerous</strong> - Manual shutdown requires physical presence at the well, even in hazardous weather</li>
+                    </ul>
+                    <p>This creates unnecessary risk and operational challenges for farmers and property managers.</p>
+                </div>
+                <div class="problem-icon">
+                    <span class="icon">⚠️</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section id="solution" class="solution">
+        <div class="container">
+            <h2>LoRa Remote Shutdown System</h2>
+            
+            <div class="solution-card">
+                <div class="solution-header">
+                    <h3>A Simple, Innovative Solution</h3>
+                    <span class="badge">Arduino + LoRa Modules</span>
+                </div>
+                <div class="solution-body">
+                    <p><strong>Overview:</strong> A simple Arduino connection at the well paired with LoRa radio modules to safely ground or disconnect the well from your home.</p>
+                    
+                    <h4>Key Advantages:</h4>
+                    <ul>
+                        <li>✅ Much cheaper than existing commercial solutions</li>
+                        <li>✅ Works with gas or electric wells</li>
+                        <li>✅ More reliable than current alternatives</li>
+                        <li>✅ No subscription fees or cloud dependency</li>
+                        <li>✅ Off-grid operation with low power consumption</li>
+                    </ul>
+
+                    <h4>How It Works:</h4>
+                    <ol>
+                        <li><strong>LoRa Modules</strong> transmit on sub-GHz frequencies (915 MHz in US)</li>
+                        <li>Signal easily penetrates obstacles with massive range on very low power</li>
+                        <li>Arduino receives command and triggers relay module output</li>
+                        <li>Relay acts as physical switch to cut power/signal to target device</li>
+                    </ol>
+
+                    <h4>Technical Details:</h4>
+                    <div class="tech-specs">
+                        <div class="spec">
+                            <strong>Hardware:</strong><br>
+                            HopeRF RFM95W or pre-built boards (Adafruit LoRa Feather, Heltec LoRa V3)
+                        </div>
+                        <div class="spec">
+                            <strong>Range:</strong><br>
+                            10–15 miles Line-of-Sight with high-gain antennas
+                        </div>
+                        <div class="spec">
+                            <strong>Power:</strong><br>
+                            Very low power consumption
+                        </div>
+                        <div class="spec">
+                            <strong>Complexity:</strong><br>
+                            Moderate
+                        </div>
+                    </div>
+
+                    <h4>System Architecture</h4>
+                    <div class="architecture">
+                        <div class="arch-box">
+                            <h5>Base Station (Your Home)</h5>
+                            <ul>
+                                <li>Controller/Computer</li>
+                                <li>LoRa Transmitter Module</li>
+                                <li>Power Supply</li>
+                            </ul>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-box">
+                            <h5>Remote Well Site</h5>
+                            <ul>
+                                <li>Arduino Microcontroller</li>
+                                <li>LoRa Receiver Module</li>
+                                <li>5V Relay Module</li>
+                                <li>Local Power</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Key Features</h4>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h5>🔐 Secure</h5>
+                            <p>Encrypted LoRa communication prevents unauthorized access</p>
+                        </div>
+                        <div class="feature">
+                            <h5>💰 Affordable</h5>
+                            <p>Total cost under $300 - significantly less than commercial systems</p>
+                        </div>
+                        <div class="feature">
+                            <h5>🌐 Off-Grid</h5>
+                            <p>No internet or cellular connection required</p>
+                        </div>
+                        <div class="feature">
+                            <h5>⚡ Low Power</h5>
+                            <p>Battery-powered operation lasts months on a single charge</p>
+                        </div>
+                        <div class="feature">
+                            <h5>🔧 Flexible</h5>
+                            <p>Works with gas or electric wells - adaptable to your setup</p>
+                        </div>
+                        <div class="feature">
+                            <h5>🛡️ Reliable</h5>
+                            <p>No moving parts means fewer failure points</p>
+                        </div>
+                    </div>
+
+                    <h4>Relevant Educational Courses</h4>
+                    <div class="courses">
+                        <span class="course-badge">NTW245 Mobile Security</span>
+                        <span class="course-badge">NTW102 Foundations of Networking</span>
+                        <span class="course-badge">NTW103 Network Engineering</span>
+                        <span class="course-badge">NTW220 Linux for Technologists</span>
+                        <span class="course-badge">NTW233 IoT Architecture & Security</span>
+                        <span class="course-badge">NTW275 Network Infrastructure Design</span>
+                        <span class="course-badge">DBM100 3D Build Tools</span>
+                        <span class="course-badge">RBT125 Introduction to Robotics</span>
+                        <span class="course-badge">RBT131 Digital Logic</span>
+                        <span class="course-badge">RBT205 Mechanisms & Materials</span>
+                        <span class="course-badge">RBT173 Microcontrollers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solution-benefits">
+                <h3>Why Choose LoRa?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>Sub-GHz Frequency</h4>
+                        <p>915 MHz (US) easily penetrates obstacles like buildings, trees, and terrain without degradation</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Massive Range</h4>
+                        <p>10-15 miles of coverage is highly achievable with proper antenna placement and line-of-sight</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Zero Subscriptions</h4>
+                        <p>No monthly fees, no cloud service required - just your own hardware</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Emergency Reliable</h4>
+                        <p>Works when power is out and during emergencies - doesn't depend on cellular or internet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENCES SECTION -->
+    <section id="references" class="references">
+        <div class="container">
+            <h2>References & Resources</h2>
+            <div class="references-grid">
+                <div class="reference-item">
+                    <h4>LoRa Communication</h4>
+                    <p><strong>HackaDay:</strong> <a href="https://hackaday.io/project/168013-lora-upto-12km-arduino" target="_blank">LoRa up to 12km Arduino</a></p>
+                    <p><strong>Zbotic:</strong> <a href="https://zbotic.in/lora-module-sx1278-long-range-iot-communication-tutorial/" target="_blank">LoRa Module SX1278 Tutorial</a></p>
+                </div>
+                <div class="reference-item">
+                    <h4>Hardware Reference</h4>
+                    <p><strong>RDO Equipment:</strong> <a href="https://www.rdoequipment.com/product-details/valley-irrigation-kta-ags-fc-view-ka02865" target="_blank">Valley Irrigation KTA AGS FC</a></p>
+                </div>
+                <div class="reference-item">
+                    <h4>Project Repository</h4>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">Irrigation Well Control</a></p>
+                    <p>Full source code, schematics, and documentation available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About This Project</h4>
+                    <p>An innovative LoRa-based solution for safe, affordable remote irrigation well control.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://github.com/connorcqueen-lgtm" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">This Repository</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Questions? Check the GitHub repository issues or reach out on GitHub.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Irrigation Well Control Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
