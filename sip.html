@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP - Remote Irrigation Well Control | Connor Queen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <h1>Connor Queen</h1>
+                    <p class="tagline">IoT & Robotics Engineer</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="sip.html" class="active">SIP</a></li>
+                    <li><a href="boards.html">Boards</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SIP HERO SECTION -->
+    <section class="sip-hero">
+        <div class="hero-content">
+            <h1>Senior Innovation Project</h1>
+            <p>Remote Irrigation Well Control System</p>
+        </div>
+    </section>
+
+    <!-- PROJECT DESCRIPTION -->
+    <section class="sip-section">
+        <div class="container">
+            <h2>Project Description</h2>
+            <div class="section-content">
+                <p>Irrigation wells do not have effective remote shutdown switches. Most do not have any remote switches because existing solutions are unreliable and expensive. This creates dangerous situations where operators must physically travel to wells in hazardous weather conditions.</p>
+                
+                <div class="problem-box">
+                    <h3>The Problem</h3>
+                    <ul>
+                        <li><strong>Not Reliable:</strong> Existing systems frequently fail</li>
+                        <li><strong>Expensive:</strong> Current commercial solutions are cost-prohibitive</li>
+                        <li><strong>Dangerous:</strong> Manual shutdown requires physical presence at the well, even in storms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INNOVATION CLAIM -->
+    <section class="sip-section alternate">
+        <div class="container">
+            <h2>Innovation Claim</h2>
+            <div class="innovation-card">
+                <h3>🔧 LoRa-Based Remote Shutdown System</h3>
+                <p>A simple, affordable, and reliable Arduino connection at the well paired with LoRa radio modules to safely ground or disconnect the well from your home.</p>
+                
+                <div class="innovation-grid">
+                    <div class="innovation-item">
+                        <h4>Why It's Innovative</h4>
+                        <ul>
+                            <li>Much cheaper than existing commercial solutions</li>
+                            <li>Works with gas or electric wells</li>
+                            <li>More reliable than current alternatives</li>
+                            <li>No subscription fees or cloud dependency</li>
+                            <li>Off-grid operation with low power consumption</li>
+                        </ul>
+                    </div>
+                    <div class="innovation-item">
+                        <h4>Key Advantages</h4>
+                        <ul>
+                            <li>10-15 mile range with high-gain antennas</li>
+                            <li>Sub-GHz frequency penetrates obstacles</li>
+                            <li>Totally off-grid, no internet required</li>
+                            <li>Battery-powered operation (months per charge)</li>
+                            <li>No moving parts = fewer failure points</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="sip-section">
+        <div class="container">
+            <h2>How It Works</h2>
+            
+            <div class="tech-specs">
+                <div class="spec">
+                    <strong>LoRa Modules</strong><br>
+                    Transmit on sub-GHz frequencies (915 MHz in US)
+                </div>
+                <div class="spec">
+                    <strong>Arduino Receiver</strong><br>
+                    Receives signal and triggers relay module
+                </div>
+                <div class="spec">
+                    <strong>Relay Module</strong><br>
+                    Acts as physical switch to cut power/signal
+                </div>
+                <div class="spec">
+                    <strong>Remote Control</strong><br>
+                    Operator controls from home or safe location
+                </div>
+            </div>
+
+            <h3>System Architecture</h3>
+            <div class="architecture">
+                <div class="arch-box">
+                    <h4>Base Station (Your Home)</h4>
+                    <ul>
+                        <li>Controller/Computer</li>
+                        <li>LoRa Transmitter Module</li>
+                        <li>Power Supply</li>
+                    </ul>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-box">
+                    <h4>Remote Well Site</h4>
+                    <ul>
+                        <li>Arduino Microcontroller</li>
+                        <li>LoRa Receiver Module</li>
+                        <li>5V Relay Module</li>
+                        <li>Local Power</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SPECIFICATIONS -->
+    <section class="sip-section alternate">
+        <div class="container">
+            <h2>Technical Specifications</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Hardware</h4>
+                    <p>HopeRF RFM95W or pre-built boards (Adafruit LoRa Feather, Heltec LoRa V3)</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Range</h4>
+                    <p>10–15 miles Line-of-Sight with high-gain antennas</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Frequency</h4>
+                    <p>915 MHz (US) - Sub-GHz for penetration</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Power</h4>
+                    <p>Very low power consumption, battery-operated</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Cost</h4>
+                    <p>Under $300 total - significantly less than commercial systems</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Complexity</h4>
+                    <p>Moderate - suitable for engineering students</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="sip-section">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>🔐 Secure</h3>
+                    <p>Encrypted LoRa communication prevents unauthorized access</p>
+                </div>
+                <div class="feature">
+                    <h3>💰 Affordable</h3>
+                    <p>Total cost under $300 - significantly less than commercial systems</p>
+                </div>
+                <div class="feature">
+                    <h3>🌐 Off-Grid</h3>
+                    <p>No internet or cellular connection required</p>
+                </div>
+                <div class="feature">
+                    <h3>⚡ Low Power</h3>
+                    <p>Battery-powered operation lasts months on a single charge</p>
+                </div>
+                <div class="feature">
+                    <h3>🔧 Flexible</h3>
+                    <p>Works with gas or electric wells - adaptable to your setup</p>
+                </div>
+                <div class="feature">
+                    <h3>🛡️ Reliable</h3>
+                    <p>No moving parts means fewer failure points</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELEVANT COURSES -->
+    <section class="sip-section alternate">
+        <div class="container">
+            <h2>Relevant Educational Courses</h2>
+            <p class="section-intro">This project incorporates knowledge from:</p>
+            <div class="courses">
+                <span class="course-badge">NTW245 Mobile Security & Exploitation</span>
+                <span class="course-badge">NTW102 Foundations of Networking</span>
+                <span class="course-badge">NTW103 Introduction to Network Engineering</span>
+                <span class="course-badge">NTW220 Linux I for Technologists</span>
+                <span class="course-badge">NTW233 IoT Architecture & Security</span>
+                <span class="course-badge">NTW275 Network Infrastructure Design</span>
+                <span class="course-badge">DBM100 3D Build Tools</span>
+                <span class="course-badge">RBT125 Introduction to Robotics</span>
+                <span class="course-badge">RBT131 Digital Logic Basic Processor Design</span>
+                <span class="course-badge">RBT205 Mechanisms & Materials</span>
+                <span class="course-badge">RBT173 Introduction to Microcontrollers</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- GITHUB & RESOURCES -->
+    <section class="sip-section">
+        <div class="container">
+            <h2>Project Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>📚 LoRa Communication</h3>
+                    <p><strong>HackaDay:</strong> <a href="https://hackaday.io/project/168013-lora-upto-12km-arduino" target="_blank">LoRa up to 12km Arduino</a></p>
+                    <p><strong>Zbotic:</strong> <a href="https://zbotic.in/lora-module-sx1278-long-range-iot-communication-tutorial/" target="_blank">LoRa Module SX1278 Tutorial</a></p>
+                </div>
+                <div class="resource-card">
+                    <h3>⚙️ Hardware Reference</h3>
+                    <p><strong>RDO Equipment:</strong> <a href="https://www.rdoequipment.com/product-details/valley-irrigation-kta-ags-fc-view-ka02865" target="_blank">Valley Irrigation KTA AGS FC</a></p>
+                </div>
+                <div class="resource-card">
+                    <h3>💻 GitHub Repository</h3>
+                    <p><strong>Project Repo:</strong> <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">Irrigation Well Control</a></p>
+                    <p>Full source code, schematics, and documentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIP BRIEF PLACEHOLDER -->
+    <section class="sip-section alternate">
+        <div class="container">
+            <h2>SIP Brief (Week 4 Assignment)</h2>
+            <div class="brief-placeholder">
+                <p><em>SIP Brief document will be embedded or linked here</em></p>
+                <p>Include detailed project breakdown, timeline, and deliverables</p>
+                <!-- You can embed a PDF here later -->
+                <!-- <iframe src="path/to/sip-brief.pdf" width="100%" height="600px"></iframe> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Connor Queen</h4>
+                    <p>IoT & Robotics Engineering Student</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sip.html">SIP</a></li>
+                        <li><a href="boards.html">Boards</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/connorcqueen-lgtm" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Connor Queen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
