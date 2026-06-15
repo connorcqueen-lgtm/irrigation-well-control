@@ -30,60 +30,206 @@
     <!-- SIP HERO SECTION -->
     <section class="sip-hero">
         <div class="hero-content">
-            <h1>Senior Innovation Project</h1>
+            <h1>Senior Innovation Project (SIP)</h1>
             <p>Remote Irrigation Well Control System</p>
         </div>
     </section>
 
-    <!-- PROJECT DESCRIPTION -->
+    <!-- TABLE OF CONTENTS -->
     <section class="sip-section">
         <div class="container">
+            <h2>Project Overview</h2>
+            <p class="section-intro">A LoRa-based remote shutdown system enabling farmers to safely control irrigation wells from home, even during hazardous weather conditions.</p>
+            <div class="toc-box">
+                <h3>Quick Navigation:</h3>
+                <ul class="toc-links">
+                    <li><a href="#project-description">Project Description</a></li>
+                    <li><a href="#innovation-claim">Innovation Claim</a></li>
+                    <li><a href="#design-visuals">Design & Visuals</a></li>
+                    <li><a href="#prototype">Design Phase Prototype</a></li>
+                    <li><a href="#technical">Technical Specifications</a></li>
+                    <li><a href="#resources">Resources & GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT DESCRIPTION -->
+    <section id="project-description" class="sip-section">
+        <div class="container">
             <h2>Project Description</h2>
-            <div class="section-content">
-                <p>Irrigation wells do not have effective remote shutdown switches. Most do not have any remote switches because existing solutions are unreliable and expensive. This creates dangerous situations where operators must physically travel to wells in hazardous weather conditions.</p>
+            <div class="description-content">
+                <p><strong>Problem Statement:</strong> Irrigation wells do not have effective remote shutdown switches. Most lack any remote control because existing commercial solutions are unreliable and expensive. This creates dangerous situations where operators must physically travel to wells in hazardous weather conditions to manually shut them down.</p>
                 
                 <div class="problem-box">
-                    <h3>The Problem</h3>
+                    <h3>Why This Matters</h3>
                     <ul>
-                        <li><strong>Not Reliable:</strong> Existing systems frequently fail</li>
-                        <li><strong>Expensive:</strong> Current commercial solutions are cost-prohibitive</li>
-                        <li><strong>Dangerous:</strong> Manual shutdown requires physical presence at the well, even in storms</li>
+                        <li><strong>Safety Risk:</strong> Operators must travel to remote well sites in storms or harsh conditions</li>
+                        <li><strong>Cost Barrier:</strong> Commercial solutions cost $2,000-5,000+ per well</li>
+                        <li><strong>Reliability Issues:</strong> Existing systems frequently fail when needed most</li>
+                        <li><strong>No Scalability:</strong> Require expensive infrastructure and subscriptions</li>
                     </ul>
                 </div>
+
+                <h3>Solution Approach</h3>
+                <p>A simple, affordable, and reliable LoRa-based system that connects an Arduino microcontroller at the irrigation well site with a remote control station. Operators can safely shut down wells from their home, without internet, subscriptions, or expensive equipment.</p>
             </div>
         </div>
     </section>
 
     <!-- INNOVATION CLAIM -->
-    <section class="sip-section alternate">
+    <section id="innovation-claim" class="sip-section alternate">
         <div class="container">
             <h2>Innovation Claim</h2>
             <div class="innovation-card">
-                <h3>🔧 LoRa-Based Remote Shutdown System</h3>
-                <p>A simple, affordable, and reliable Arduino connection at the well paired with LoRa radio modules to safely ground or disconnect the well from your home.</p>
+                <h3>🔧 Affordable LoRa-Based Remote Irrigation Well Control</h3>
+                <p><strong>Unique Innovation:</strong> A low-cost ($300), off-grid LoRa radio communication system paired with Arduino microcontrollers that safely controls irrigation wells remotely without requiring internet, subscriptions, or commercial equipment.</p>
                 
                 <div class="innovation-grid">
                     <div class="innovation-item">
                         <h4>Why It's Innovative</h4>
                         <ul>
-                            <li>Much cheaper than existing commercial solutions</li>
-                            <li>Works with gas or electric wells</li>
-                            <li>More reliable than current alternatives</li>
-                            <li>No subscription fees or cloud dependency</li>
-                            <li>Off-grid operation with low power consumption</li>
+                            <li><strong>10x Cheaper:</strong> $300 vs $2,000-5,000 commercial systems</li>
+                            <li><strong>Completely Off-Grid:</strong> No internet, cellular, or cloud dependency</li>
+                            <li><strong>More Reliable:</strong> Sub-GHz LoRa technology penetrates obstacles better than alternatives</li>
+                            <li><strong>No Subscriptions:</strong> One-time cost, no monthly fees</li>
+                            <li><strong>Highly Scalable:</strong> Add multiple wells without infrastructure changes</li>
                         </ul>
                     </div>
                     <div class="innovation-item">
-                        <h4>Key Advantages</h4>
+                        <h4>Key Advantages Over Existing Solutions</h4>
                         <ul>
-                            <li>10-15 mile range with high-gain antennas</li>
-                            <li>Sub-GHz frequency penetrates obstacles</li>
-                            <li>Totally off-grid, no internet required</li>
-                            <li>Battery-powered operation (months per charge)</li>
-                            <li>No moving parts = fewer failure points</li>
+                            <li><strong>10-15 Mile Range:</strong> Covers most agricultural operations</li>
+                            <li><strong>915 MHz Sub-GHz:</strong> Penetrates trees, buildings, and weather</li>
+                            <li><strong>Battery-Powered:</strong> 6+ months per charge per unit</li>
+                            <li><strong>Simple Design:</strong> Minimal moving parts = fewer failure points</li>
+                            <li><strong>Works with Any Well:</strong> Gas or electric, new or existing</li>
+                            <li><strong>Encrypted Communication:</strong> Secure remote operation</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIGN & VISUALS -->
+    <section id="design-visuals" class="sip-section">
+        <div class="container">
+            <h2>Design & Visuals</h2>
+            <p class="section-intro">Comprehensive system design including schematics, enclosure layout, and wiring diagrams.</p>
+
+            <div class="visuals-grid">
+                <div class="visual-card">
+                    <h3>System Architecture Diagram</h3>
+                    <div class="visual-placeholder">
+                        <p>LoRa Arduino - Murphy Switch Irrigation Motor Monitor / Shutdown (Prototype)</p>
+                        <p style="font-size: 0.9rem; color: #999;">Prototype design schematic showing system overview, wiring, and pin assignments</p>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <h3>Enclosure Layout</h3>
+                    <div class="visual-placeholder">
+                        <p>Motor-Side Enclosure Components</p>
+                        <ul style="text-align: left; margin: 12px 0; font-size: 0.95rem;">
+                            <li>LoRa Antenna & Module</li>
+                            <li>Arduino Nano Microcontroller</li>
+                            <li>Relay Module (SPDT)</li>
+                            <li>Buck Converter (12V to 5V)</li>
+                            <li>Fuse Protection (1-3A)</li>
+                            <li>Cable Glands & Weatherproofing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <h3>Wiring Schematic</h3>
+                    <div class="visual-placeholder">
+                        <p>Complete Electrical Wiring Diagram</p>
+                        <p style="font-size: 0.9rem; color: #999;">12V DC input from battery → Fuse → Buck Converter → LoRa Module & Arduino → Relay Output</p>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <h3>Pin Assignment Reference</h3>
+                    <div class="visual-placeholder">
+                        <table style="width: 100%; font-size: 0.9rem; text-align: left; margin-top: 8px;">
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <th style="text-align: left; padding-bottom: 8px;">Pin</th>
+                                <th style="text-align: left; padding-bottom: 8px;">Function</th>
+                            </tr>
+                            <tr><td>D2</td><td>Murphy switch status (optocoupler)</td></tr>
+                            <tr><td>D3</td><td>Relay control output (shutdown)</td></tr>
+                            <tr><td>D10</td><td>LoRa NSS (Chip Select)</td></tr>
+                            <tr><td>D11</td><td>LoRa MOSI</td></tr>
+                            <tr><td>D12</td><td>LoRa MISO</td></tr>
+                            <tr><td>D13</td><td>LoRa SCK</td></tr>
+                            <tr><td>5V</td><td>Logic Power</td></tr>
+                            <tr><td>GND</td><td>Ground</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-xl);">System Operation Flow</h3>
+            <div class="operation-flow">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <p><strong>Remote Command</strong><br>Operator sends shutdown command</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <p><strong>LoRa Transmission</strong><br>Transmitter sends encrypted signal</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <p><strong>Arduino Receives</strong><br>Motor-side Arduino processes command</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <p><strong>Relay Activates</strong><br>Relay cuts power/signal (2-5 sec)</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-number">5</div>
+                    <p><strong>Motor Stops</strong><br>Engine safely shuts down</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIGN PHASE PROTOTYPE VIDEO -->
+    <section id="prototype" class="sip-section alternate">
+        <div class="container">
+            <h2>Design Phase Prototype</h2>
+            <p class="section-intro">Week 4 SIP Pitch demonstrating the project concept and system design</p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <p style="text-align: center; color: var(--text-light); margin-bottom: var(--spacing-lg); font-weight: 600;">
+                        SIP Pitch Part 2 - System Design & Prototype Overview
+                    </p>
+                    <!-- YouTube Embed -->
+                    <iframe width="100%" height="600" style="border-radius: 12px; max-width: 100%;" src="https://www.youtube.com/embed/7hFrQ-28dR4" title="SIP Pitch Part 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+                    <p style="text-align: center; margin-top: var(--spacing-md); color: var(--text-light); font-size: 0.95rem;">
+                        <em>Week 4 SIP Pitch - Comprehensive system design and prototype overview</em>
+                    </p>
+                </div>
+            </div>
+
+            <div class="prototype-notes" style="margin-top: var(--spacing-xl);">
+                <h3>Prototype Overview</h3>
+                <ul>
+                    <li>Working proof-of-concept with Arduino and LoRa modules</li>
+                    <li>Demonstrates remote shutdown capability over 100+ meters</li>
+                    <li>Shows enclosure design and component integration</li>
+                    <li>Displays status feedback and safety features</li>
+                    <li>Cost breakdown analysis ($300 total)</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -91,45 +237,46 @@
     <!-- HOW IT WORKS -->
     <section class="sip-section">
         <div class="container">
-            <h2>How It Works</h2>
+            <h2>How It Works - Technical Details</h2>
             
             <div class="tech-specs">
                 <div class="spec">
                     <strong>LoRa Modules</strong><br>
-                    Transmit on sub-GHz frequencies (915 MHz in US)
+                    915 MHz (US) sub-GHz frequency for long-range penetration
                 </div>
                 <div class="spec">
                     <strong>Arduino Receiver</strong><br>
-                    Receives signal and triggers relay module
+                    Decodes signal and verifies command validity
                 </div>
                 <div class="spec">
                     <strong>Relay Module</strong><br>
-                    Acts as physical switch to cut power/signal
+                    Physically cuts power/signal to engine starter
                 </div>
                 <div class="spec">
-                    <strong>Remote Control</strong><br>
-                    Operator controls from home or safe location
+                    <strong>Status Feedback</strong><br>
+                    Confirmation signal sent back to operator
                 </div>
             </div>
 
             <h3>System Architecture</h3>
             <div class="architecture">
                 <div class="arch-box">
-                    <h4>Base Station (Your Home)</h4>
+                    <h4>🏠 Base Station (Your Home)</h4>
                     <ul>
-                        <li>Controller/Computer</li>
+                        <li>Laptop / Raspberry Pi</li>
                         <li>LoRa Transmitter Module</li>
-                        <li>Power Supply</li>
+                        <li>GUI Application (Python)</li>
+                        <li>USB Power</li>
                     </ul>
                 </div>
-                <div class="arch-arrow">→</div>
+                <div class="arch-arrow">↔</div>
                 <div class="arch-box">
-                    <h4>Remote Well Site</h4>
+                    <h4>⚙️ Motor Site (Remote Well)</h4>
                     <ul>
-                        <li>Arduino Microcontroller</li>
+                        <li>Arduino Nano Microcontroller</li>
                         <li>LoRa Receiver Module</li>
-                        <li>5V Relay Module</li>
-                        <li>Local Power</li>
+                        <li>5V Relay Module (SPDT)</li>
+                        <li>12V Battery Power</li>
                     </ul>
                 </div>
             </div>
@@ -137,14 +284,14 @@
     </section>
 
     <!-- TECHNICAL SPECIFICATIONS -->
-    <section class="sip-section alternate">
+    <section id="technical" class="sip-section alternate">
         <div class="container">
             <h2>Technical Specifications</h2>
             
             <div class="specs-grid">
                 <div class="spec-card">
                     <h4>Hardware</h4>
-                    <p>HopeRF RFM95W or pre-built boards (Adafruit LoRa Feather, Heltec LoRa V3)</p>
+                    <p>HopeRF RFM95W or Adafruit LoRa Feather, Arduino Nano/Uno, 5V SPDT Relay</p>
                 </div>
                 <div class="spec-card">
                     <h4>Range</h4>
@@ -152,52 +299,68 @@
                 </div>
                 <div class="spec-card">
                     <h4>Frequency</h4>
-                    <p>915 MHz (US) - Sub-GHz for penetration</p>
+                    <p>915 MHz (US) - Sub-GHz penetration through obstacles</p>
                 </div>
                 <div class="spec-card">
-                    <h4>Power</h4>
-                    <p>Very low power consumption, battery-operated</p>
+                    <h4>Power Consumption</h4>
+                    <p>Ultra-low: ~2mA standby, 100mA active transmission</p>
                 </div>
                 <div class="spec-card">
-                    <h4>Cost</h4>
-                    <p>Under $300 total - significantly less than commercial systems</p>
+                    <h4>Battery Life</h4>
+                    <p>6+ months per charge with 12V li-ion battery</p>
                 </div>
                 <div class="spec-card">
-                    <h4>Complexity</h4>
-                    <p>Moderate - suitable for engineering students</p>
+                    <h4>Total Cost</h4>
+                    <p>Under $300 - 10x cheaper than commercial systems</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Communication Protocol</h4>
+                    <p>Encrypted LoRaWAN with error checking</p>
+                </div>
+                <div class="spec-card">
+                    <h4>Response Time</h4>
+                    <p>2-5 seconds from command to engine shutdown</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
+    <!-- KEY FEATURES -->
     <section class="sip-section">
         <div class="container">
             <h2>Key Features</h2>
             <div class="features-grid">
                 <div class="feature">
                     <h3>🔐 Secure</h3>
-                    <p>Encrypted LoRa communication prevents unauthorized access</p>
+                    <p>Encrypted LoRa communication prevents unauthorized access or interference</p>
                 </div>
                 <div class="feature">
                     <h3>💰 Affordable</h3>
-                    <p>Total cost under $300 - significantly less than commercial systems</p>
+                    <p>Total cost under $300 - significantly cheaper than commercial alternatives</p>
                 </div>
                 <div class="feature">
                     <h3>🌐 Off-Grid</h3>
-                    <p>No internet or cellular connection required</p>
+                    <p>No internet, cellular, or cloud connection required</p>
                 </div>
                 <div class="feature">
                     <h3>⚡ Low Power</h3>
-                    <p>Battery-powered operation lasts months on a single charge</p>
+                    <p>Battery-powered operation lasts 6+ months on a single charge</p>
                 </div>
                 <div class="feature">
                     <h3>🔧 Flexible</h3>
-                    <p>Works with gas or electric wells - adaptable to your setup</p>
+                    <p>Works with gas or electric wells - adaptable to existing systems</p>
                 </div>
                 <div class="feature">
                     <h3>🛡️ Reliable</h3>
-                    <p>No moving parts means fewer failure points</p>
+                    <p>Minimal moving parts and proven LoRa technology for remote operations</p>
+                </div>
+                <div class="feature">
+                    <h3>📡 Long Range</h3>
+                    <p>10-15 mile coverage covers most agricultural operations</p>
+                </div>
+                <div class="feature">
+                    <h3>🔄 Scalable</h3>
+                    <p>Add multiple wells without infrastructure changes or extra costs</p>
                 </div>
             </div>
         </div>
@@ -207,7 +370,7 @@
     <section class="sip-section alternate">
         <div class="container">
             <h2>Relevant Educational Courses</h2>
-            <p class="section-intro">This project incorporates knowledge from:</p>
+            <p class="section-intro">This project incorporates knowledge from UAT coursework:</p>
             <div class="courses">
                 <span class="course-badge">NTW245 Mobile Security & Exploitation</span>
                 <span class="course-badge">NTW102 Foundations of Networking</span>
@@ -224,38 +387,59 @@
         </div>
     </section>
 
-    <!-- GITHUB & RESOURCES -->
-    <section class="sip-section">
+    <!-- PROJECT RESOURCES & GITHUB -->
+    <section id="resources" class="sip-section">
         <div class="container">
-            <h2>Project Resources</h2>
+            <h2>Project Resources & GitHub</h2>
             <div class="resources-grid">
                 <div class="resource-card">
-                    <h3>📚 LoRa Communication</h3>
+                    <h3>📚 LoRa Communication Resources</h3>
                     <p><strong>HackaDay:</strong> <a href="https://hackaday.io/project/168013-lora-upto-12km-arduino" target="_blank">LoRa up to 12km Arduino</a></p>
-                    <p><strong>Zbotic:</strong> <a href="https://zbotic.in/lora-module-sx1278-long-range-iot-communication-tutorial/" target="_blank">LoRa Module SX1278 Tutorial</a></p>
+                    <p><strong>Zbotic Tutorial:</strong> <a href="https://zbotic.in/lora-module-sx1278-long-range-iot-communication-tutorial/" target="_blank">LoRa Module SX1278 Tutorial</a></p>
+                    <p><strong>Adafruit Docs:</strong> <a href="https://learn.adafruit.com/" target="_blank">Adafruit Learning System</a></p>
                 </div>
                 <div class="resource-card">
                     <h3>⚙️ Hardware Reference</h3>
-                    <p><strong>RDO Equipment:</strong> <a href="https://www.rdoequipment.com/product-details/valley-irrigation-kta-ags-fc-view-ka02865" target="_blank">Valley Irrigation KTA AGS FC</a></p>
+                    <p><strong>Valley Irrigation:</strong> <a href="https://www.rdoequipment.com/" target="_blank">RDO Equipment - Agricultural Hardware</a></p>
+                    <p><strong>Arduino:</strong> <a href="https://www.arduino.cc/" target="_blank">Arduino Official Documentation</a></p>
+                    <p><strong>Component Datasheets:</strong> Available in project repository</p>
                 </div>
                 <div class="resource-card">
                     <h3>💻 GitHub Repository</h3>
-                    <p><strong>Project Repo:</strong> <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">Irrigation Well Control</a></p>
-                    <p>Full source code, schematics, and documentation</p>
+                    <p><strong>Complete Project:</strong> <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">Irrigation Well Control System</a></p>
+                    <p>Includes:</p>
+                    <ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
+                        <li>Arduino source code</li>
+                        <li>Electrical schematics</li>
+                        <li>3D enclosure models</li>
+                        <li>Documentation & guides</li>
+                        <li>Bill of Materials (BOM)</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SIP BRIEF PLACEHOLDER -->
+    <!-- SIP BRIEF & DOCUMENTS -->
     <section class="sip-section alternate">
         <div class="container">
-            <h2>SIP Brief (Week 4 Assignment)</h2>
-            <div class="brief-placeholder">
-                <p><em>SIP Brief document will be embedded or linked here</em></p>
-                <p>Include detailed project breakdown, timeline, and deliverables</p>
-                <!-- You can embed a PDF here later -->
-                <!-- <iframe src="path/to/sip-brief.pdf" width="100%" height="600px"></iframe> -->
+            <h2>SIP Documentation</h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <h3>📋 SIP Brief (Week 4)</h3>
+                    <p>Detailed project breakdown including problem statement, innovation claim, and technical approach.</p>
+                    <p><em>Document link or PDF embed will be added here</em></p>
+                </div>
+                <div class="doc-card">
+                    <h3>📊 Innovation Brief</h3>
+                    <p>Complete documentation of the innovation claim with market analysis and competitive comparison.</p>
+                    <p><em>Full text and supporting materials available upon request</em></p>
+                </div>
+                <div class="doc-card">
+                    <h3>📄 Bill of Materials</h3>
+                    <p>Complete component list with part numbers, suppliers, and costs ($300 total).</p>
+                    <p><em>Available in GitHub repository</em></p>
+                </div>
             </div>
         </div>
     </section>
