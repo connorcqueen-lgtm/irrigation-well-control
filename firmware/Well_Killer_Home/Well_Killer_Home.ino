@@ -1,142 +1,92 @@
 #include <SoftwareSerial.h>
 
-// Nextion touchscreen
-// D2 = RX, D3 = TX
-SoftwareSerial nextion(2, 3);
+// Well Killer bench prototype. Radio messages are NOT authenticated.
+SoftwareSerial nextion(2, 3); // Nano RX=D2, TX=D3
+SoftwareSerial lora(10, 11);  // Nano RX=D10, TX=D11
+String touchCommand;
+String radioLine;
+bool waitingForAck = false;
+unsigned long sentAt = 0;
+const unsigned long ACK_TIMEOUT_MS = 8000;
 
-// LoRa radio
-// D10 = RX, D11 = TX
-SoftwareSerial lora(10, 11);
+void endNextion() {
+  nextion.write(0xFF);
+  nextion.write(0xFF);
+  nextion.write(0xFF);
+}
 
-String touchCommand = "";
+void showStatus(const char* label) {
+  // Only fixed labels supplied by firmware are sent to the Nextion.
+  nextion.print(F("status.txt=\""));
+  nextion.print(label);
+  nextion.print('"');
+  endNextion();
+}
 
-void setup()
-{
+void handleRadio(String msg) {
+  msg.trim();
+  Serial.print(F("Radio: "));
+  Serial.println(msg);
+  if (msg == "ACK_RELAY_PULSED") {
+    waitingForAck = false;
+    showStatus("RELAY ACTIVATED"); // Does not confirm engine stopped.
+  } else if (msg == "MURPHY_TRIPPED") {
+    showStatus("MURPHY INPUT ACTIVE"); // Bench-simulated status.
+  } else if (msg == "MURPHY_RESET") {
+    showStatus("MURPHY INPUT RESET");
+  }
+}
+
+void setup() {
   Serial.begin(9600);
-
   nextion.begin(9600);
   lora.begin(9600);
-
   nextion.listen();
-
-  Serial.println("==============================");
-  Serial.println(" WELL KILLER - HOME CONTROL");
-  Serial.println("==============================");
-  Serial.println("Waiting for touchscreen...");
+  Serial.println(F("Well Killer: bench home controller ready"));
 }
 
-void loop()
-{
-  // ==================================================
-  // LISTEN TO NEXTION
-  // ==================================================
-
+void loop() {
+  // SoftwareSerial can listen to only one UART at a time.
+  // Short alternating windows reduce, but do not eliminate, lost messages.
   nextion.listen();
-
-  while (nextion.available())
-  {
-    char incoming = nextion.read();
-
-    if (incoming >= 32 && incoming <= 126)
-    {
-      touchCommand += incoming;
-    }
-
-    delay(2);
-  }
-
-  // ==================================================
-  // SHUTDOWN BUTTON PRESSED
-  // ==================================================
-
-  if (touchCommand.indexOf("WELL_STOP") >= 0)
-  {
-    Serial.println();
-    Serial.println("SHUT DOWN button pressed.");
-
-    // Tell the touchscreen the command was sent.
-    nextion.print("status.txt=\"SHUTDOWN SENT\"");
-    sendNextionEnd();
-
-    // Switch to LoRa.
-    lora.listen();
-
-    // Send shutdown command.
-    lora.println("WELL_STOP");
-
-    Serial.println("Sent: WELL_STOP");
-    Serial.println("Waiting for well response...");
-
-    touchCommand = "";
-
-    // ==================================================
-    // WAIT FOR ACKNOWLEDGMENT
-    // ==================================================
-
-    unsigned long startTime = millis();
-    bool acknowledged = false;
-
-    // Wait up to 8 seconds.
-    while (millis() - startTime < 8000)
-    {
-      if (lora.available())
-      {
-        String response = lora.readStringUntil('\n');
-        response.trim();
-
-        Serial.print("Received: ");
-        Serial.println(response);
-
-        if (response == "ACK_STOPPED")
-        {
-          acknowledged = true;
-          break;
-        }
+  unsigned long window = millis();
+  while (millis() - window < 40) {
+    while (nextion.available()) {
+      char c = (char)nextion.read();
+      if (c >= 32 && c <= 126) {
+        if (touchCommand.length() < 40) touchCommand += c;
+        else touchCommand = "";
       }
     }
-
-    // ==================================================
-    // UPDATE NEXTION
-    // ==================================================
-
-    nextion.listen();
-
-    if (acknowledged)
-    {
-      Serial.println("Well acknowledged shutdown.");
-
-      nextion.print("status.txt=\"WELL STOPPED\"");
-      sendNextionEnd();
-    }
-    else
-    {
-      Serial.println("ERROR: No response from well.");
-
-      nextion.print("status.txt=\"NO RESPONSE\"");
-      sendNextionEnd();
-    }
-
-    Serial.println();
   }
 
-  // Clear unexpected data.
-  if (touchCommand.length() > 40)
-  {
+  if (touchCommand.indexOf("WELL_STOP") >= 0) {
     touchCommand = "";
+    showStatus("SHUTDOWN SENT");
+    lora.listen();
+    lora.println(F("WELL_STOP"));
+    waitingForAck = true;
+    sentAt = millis();
+    Serial.println(F("Stop command transmitted"));
   }
-}
 
+  lora.listen();
+  window = millis();
+  while (millis() - window < 180) {
+    while (lora.available()) {
+      char c = (char)lora.read();
+      if (c == '\n') {
+        handleRadio(radioLine);
+        radioLine = "";
+      } else if (c >= 32 && c <= 126) {
+        if (radioLine.length() < 50) radioLine += c;
+        else radioLine = "";
+      }
+    }
+  }
 
-// ======================================================
-// NEXTION COMMAND TERMINATOR
-//
-// Every command sent TO a Nextion must end with three
-// bytes of 0xFF.
-// ======================================================
-
-void sendNextionEnd()
-{
-  nextion.write(0xFF);
-  nextion.write(0xFF);
-  nextion.write(0xFF);
+  if (waitingForAck && millis() - sentAt >= ACK_TIMEOUT_MS) {
+    waitingForAck = false;
+    showStatus("NO RESPONSE"); // Outcome unknown: do not assume well is running.
+  }
 }

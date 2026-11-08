@@ -1,480 +1,194 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Innovation Project - Remote Irrigation Well Control | Connor Queen</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Innovation Project - Remote Irrigation Well Control | Connor Queen</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-    <!-- HEADER & NAVIGATION -->
-    <header>
-        <nav class="navbar">
-            <div class="navbar-container">
-                <div class="logo">
-                    <h1>Connor Queen</h1>
-                    <p class="tagline">IoT & Robotics Engineer</p>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="sip.html" class="active">Student Innovation Project</a></li>
-                    <li><a href="boards.html">Boards</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- SIP HERO SECTION -->
-    <section class="sip-hero">
-        <div class="hero-content">
-            <h1>Student Innovation Project (SIP)</h1>
-            <p>Remote Irrigation Well Control System</p>
-        </div>
-    </section>
-
-    <!-- TABLE OF CONTENTS -->
-    <section class="sip-section">
-        <div class="container">
-            <h2>Project Overview</h2>
-            <p class="section-intro">A LoRa-based remote shutdown system enabling farmers to safely control irrigation wells from home, even during hazardous weather conditions.</p>
-            <div class="toc-box">
-                <h3>Quick Navigation:</h3>
-                <ul class="toc-links">
-                    <li><a href="#project-description">Project Description</a></li>
-                    <li><a href="#innovation-claim">Innovation Claim</a></li>
-                    <li><a href="#design-visuals">Design & Visuals</a></li>
-                    <li><a href="#prototype">Design Phase Prototype</a></li>
-                    <li><a href="#technical">Technical Specifications</a></li>
-                    <li><a href="#resources">Resources & GitHub</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECT DESCRIPTION -->
-    <section id="project-description" class="sip-section">
-        <div class="container">
-            <h2>Project Description</h2>
-            <div class="description-content">
-                <p><strong>Problem Statement:</strong> Irrigation wells do not have effective remote shutdown switches. Most lack any remote control because existing commercial solutions are unreliable, extremely expensive ($2,000-5,000+), and require infrastructure that small farms cannot afford.</p>
-                
-                <div class="problem-box">
-                    <h3>Why This Matters</h3>
-                    <ul>
-                        <li><strong>Safety Risk:</strong> Operators must travel to remote well sites in storms or harsh conditions</li>
-                        <li><strong>Cost Barrier:</strong> Commercial solutions cost $2,000-5,000+ per well</li>
-                        <li><strong>Reliability Issues:</strong> Existing systems frequently fail when needed most</li>
-                        <li><strong>No Scalability:</strong> Require expensive infrastructure and subscriptions</li>
-                    </ul>
-                </div>
-
-                <h3>Solution Approach</h3>
-                <p>A simple, affordable, and reliable LoRa-based system that connects an Arduino microcontroller at the irrigation well site with a remote control station. Operators can safely shut down wells from home without traveling to dangerous locations.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- INNOVATION CLAIM -->
-    <section id="innovation-claim" class="sip-section alternate">
-        <div class="container">
-            <h2>Innovation Claim</h2>
-            <div class="innovation-card">
-                <h3>🔧 Affordable LoRa-Based Remote Irrigation Well Control</h3>
-                <p><strong>Unique Innovation:</strong> A low-cost ($300), off-grid LoRa radio communication system paired with Arduino microcontrollers that safely controls irrigation wells remotely without internet, cellular, or expensive cloud infrastructure.</p>
-                
-                <div class="innovation-grid">
-                    <div class="innovation-item">
-                        <h4>Why It's Innovative</h4>
-                        <ul>
-                            <li><strong>10x Cheaper:</strong> $300 vs $2,000-5,000 commercial systems</li>
-                            <li><strong>Completely Off-Grid:</strong> No internet, cellular, or cloud dependency</li>
-                            <li><strong>More Reliable:</strong> Sub-GHz LoRa technology penetrates obstacles better than alternatives</li>
-                            <li><strong>No Subscriptions:</strong> One-time cost, no monthly fees</li>
-                            <li><strong>Highly Scalable:</strong> Add multiple wells without infrastructure changes</li>
-                        </ul>
-                    </div>
-                    <div class="innovation-item">
-                        <h4>Key Advantages Over Existing Solutions</h4>
-                        <ul>
-                            <li><strong>10-15 Mile Range:</strong> Covers most agricultural operations</li>
-                            <li><strong>915 MHz Sub-GHz:</strong> Penetrates trees, buildings, and weather</li>
-                            <li><strong>Battery-Powered:</strong> 6+ months per charge per unit</li>
-                            <li><strong>Simple Design:</strong> Minimal moving parts = fewer failure points</li>
-                            <li><strong>Works with Any Well:</strong> Gas or electric, new or existing</li>
-                            <li><strong>Encrypted Communication:</strong> Secure remote operation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DESIGN & VISUALS -->
-    <section id="design-visuals" class="sip-section">
-        <div class="container">
-            <h2>Design & Visuals</h2>
-            <p class="section-intro">Comprehensive system design including schematics, enclosure layout, and wiring diagrams.</p>
-
-            <div class="visuals-grid">
-                <div class="visual-card">
-                    <h3>System Architecture Diagram</h3>
-                    <div class="visual-placeholder">
-                        <p>LoRa Arduino - Murphy Switch Irrigation Motor Monitor / Shutdown (Prototype)</p>
-                        <p style="font-size: 0.9rem; color: #999;">Prototype design schematic showing system overview, wiring, and pin assignments</p>
-                    </div>
-                </div>
-
-                <div class="visual-card">
-                    <h3>Enclosure Layout</h3>
-                    <div class="visual-placeholder">
-                        <p>Motor-Side Enclosure Components</p>
-                        <ul style="text-align: left; margin: 12px 0; font-size: 0.95rem;">
-                            <li>LoRa Antenna & Module</li>
-                            <li>Arduino Nano Microcontroller</li>
-                            <li>Relay Module (SPDT)</li>
-                            <li>Buck Converter (12V to 5V)</li>
-                            <li>Fuse Protection (1-3A)</li>
-                            <li>Cable Glands & Weatherproofing</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="visual-card">
-                    <h3>Wiring Schematic</h3>
-                    <div class="visual-placeholder">
-                        <p>Complete Electrical Wiring Diagram</p>
-                        <p style="font-size: 0.9rem; color: #999;">12V DC input from battery → Fuse → Buck Converter → LoRa Module & Arduino → Relay Output</p>
-                    </div>
-                </div>
-
-                <div class="visual-card">
-                    <h3>Pin Assignment Reference</h3>
-                    <div class="visual-placeholder">
-                        <table style="width: 100%; font-size: 0.9rem; text-align: left; margin-top: 8px;">
-                            <tr style="border-bottom: 1px solid #ddd;">
-                                <th style="text-align: left; padding-bottom: 8px;">Pin</th>
-                                <th style="text-align: left; padding-bottom: 8px;">Function</th>
-                            </tr>
-                            <tr><td>D2</td><td>Murphy switch status (optocoupler)</td></tr>
-                            <tr><td>D3</td><td>Relay control output (shutdown)</td></tr>
-                            <tr><td>D10</td><td>LoRa NSS (Chip Select)</td></tr>
-                            <tr><td>D11</td><td>LoRa MOSI</td></tr>
-                            <tr><td>D12</td><td>LoRa MISO</td></tr>
-                            <tr><td>D13</td><td>LoRa SCK</td></tr>
-                            <tr><td>5V</td><td>Logic Power</td></tr>
-                            <tr><td>GND</td><td>Ground</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <h3 style="margin-top: var(--spacing-xl);">System Operation Flow</h3>
-            <div class="operation-flow">
-                <div class="flow-step">
-                    <div class="flow-number">1</div>
-                    <p><strong>Remote Command</strong><br>Operator sends shutdown command</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-number">2</div>
-                    <p><strong>LoRa Transmission</strong><br>Transmitter sends encrypted signal</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-number">3</div>
-                    <p><strong>Arduino Receives</strong><br>Motor-side Arduino processes command</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-number">4</div>
-                    <p><strong>Relay Activates</strong><br>Relay cuts power/signal (2-5 sec)</p>
-                </div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-step">
-                    <div class="flow-number">5</div>
-                    <p><strong>Motor Stops</strong><br>Engine safely shuts down</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DESIGN PHASE PROTOTYPE VIDEO -->
-    <section id="prototype" class="sip-section alternate">
-        <div class="container">
-            <h2>Design Phase Prototype</h2>
-            <p class="section-intro">Week 4 Student Innovation Project Pitch demonstrating the project concept and system design</p>
-            
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <p style="text-align: center; color: var(--text-light); margin-bottom: var(--spacing-lg); font-weight: 600;">
-                        Student Innovation Project Pitch Part 2 - System Design & Prototype Overview
+<!-- HEADER & NAVIGATION -->
+<header>
+<nav class="navbar">
+<div class="navbar-container">
+<div class="logo">
+<h1>Connor Queen</h1>
+<p class="tagline">IoT &amp; Robotics Engineer</p>
+</div>
+<ul class="nav-menu">
+<li><a href="index.html#home">Home</a></li>
+<li><a class="active" href="sip.html">Student Innovation Project</a></li>
+<li><a href="boards.html">Boards</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+</header>
+<!-- SIP HERO SECTION -->
+<section class="sip-hero">
+<div class="hero-content">
+<h1>Student Innovation Project (SIP)</h1>
+<p>Remote Irrigation Well Control System</p>
+</div>
+</section>
+<!-- TABLE OF CONTENTS -->
+<section class="sip-section">
+<div class="container">
+<h2>Project Overview</h2>
+<p class="section-intro">A LoRa-based remote irrigation-well shutdown-request prototype. Bench electronics are working; engine integration and field validation are still in progress.</p>
+<div class="toc-box">
+<h3>Quick Navigation:</h3>
+<ul class="toc-links">
+<li><a href="#project-description">Project Description</a></li>
+<li><a href="#innovation-claim">Innovation Claim</a></li>
+<li><a href="#progress">Prototype Progress</a></li><li><a href="#design-visuals">Design &amp; Visuals</a></li>
+<li><a href="#prototype">Design Phase Prototype</a></li>
+<li><a href="#technical">Technical Specifications</a></li>
+<li><a href="#resources">Resources &amp; GitHub</a></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- PROJECT DESCRIPTION -->
+<section class="sip-section" id="project-description">
+<div class="container"><h2>Project Description</h2><div class="description-content"><p><strong>Problem:</strong> Traveling to an irrigation engine during lightning or severe weather creates avoidable exposure. Some locations also lack dependable cellular coverage.</p><p><strong>Proposed solution:</strong> A direct LoRa link between a home touchscreen controller and a remote Arduino-based shutdown-request unit. The design aims to interface with an existing Murphy 117 and Swichgage safety circuit without replacing those protections.</p><p><strong>Current status:</strong> A bench prototype has demonstrated touchscreen commands, bidirectional LoRa messaging, a three-second relay pulse, and simulated isolated trip-input feedback. The Murphy/engine interface and actual shutdown verification remain incomplete.</p></div></div>
+</section>
+<!-- INNOVATION CLAIM -->
+<section class="sip-section alternate" id="innovation-claim">
+<div class="container"><h2>Innovation Claim</h2><div class="innovation-card"><h3>Low-infrastructure remote shutdown for agricultural wells</h3><p>The project combines accessible embedded hardware, direct sub-GHz LoRa communication, a local touchscreen, and a planned interface to an existing Murphy shutdown system. It is intended to reduce trips to remote well sites during hazardous weather without requiring cellular service at the well.</p><div class="innovation-grid"><div class="innovation-item"><h4>Demonstrated</h4><ul><li>Two-way LoRa communication between Arduino Nano controllers</li><li>Nextion touchscreen shutdown command</li><li>Three-second relay actuation and acknowledgment</li><li>Isolated optocoupler input tested with a simulated 5 V signal</li></ul></div><div class="innovation-item"><h4>Still to validate</h4><ul><li>Safe, compatible Murphy 117 interface</li><li>Independent proof of engine stopped/running state</li><li>Radio range, interference resistance, and message authentication</li><li>Field power protection, weatherproofing, and complete cost estimate</li></ul></div></div></div></div>
+</section>
+<!-- DESIGN & VISUALS -->
+<section class="sip-section" id="design-visuals">
+<div class="container"><h2>Design &amp; Wiring Overview</h2><p class="section-intro">Current bench wiring and proposed field architecture. These are pin references, not a certified engine-control schematic.</p><div class="visuals-grid"><div class="visual-card"><h3>Home Controller</h3><ul><li>Arduino Nano and Nextion Enhanced 3.5-inch display</li><li>Nextion TX → Nano D2; Nextion RX ← Nano D3</li><li>LoRa TXD → Nano D10; LoRa RXD ← Nano D11</li><li>Shared logic ground; regulated 5 V power</li></ul></div><div class="visual-card"><h3>Well Controller</h3><ul><li>Arduino Nano and DX-LR32-900T22D UART LoRa</li><li>LoRa TXD → Nano D10; RXD ← Nano D11</li><li>Relay input IN1 → Nano D4 (active HIGH on tested board)</li><li>Optocoupler OUT → Nano D5 (active LOW with INPUT_PULLUP)</li></ul></div><div class="visual-card"><h3>Planned Field Interface</h3><ul><li>Fused, automotive-rated 12 V to 5 V conversion</li><li>Relay dry contacts proposed for a shutdown request in parallel with existing protection, subject to verification</li><li>3–5 V optocoupler input requires a correctly rated, isolated Murphy sensing interface</li><li>Existing Swichgage and emergency-stop functions must remain independent</li></ul></div></div><p><strong>Important:</strong> No direct connection from 12–13 V Murphy wiring to Nano D5 or the 3–5 V optocoupler input. A relay pulse acknowledgment is not proof that the engine has stopped.</p></div>
+</section>
+<!-- DESIGN PHASE PROTOTYPE VIDEO -->
+<section class="sip-section alternate" id="prototype">
+<div class="container">
+<h2>Design Phase Prototype</h2>
+<p class="section-intro">Week 4 Student Innovation Project Pitch demonstrating the project concept and system design</p>
+<div class="video-container">
+<div class="video-wrapper">
+<p style="text-align: center; color: var(--text-light); margin-bottom: var(--spacing-lg); font-weight: 600;">
+                        Student Innovation Project Pitch Part 2 - System Design &amp; Prototype Overview
                     </p>
-                    <!-- YouTube Embed -->
-                    <iframe width="100%" height="600" style="border-radius: 12px; max-width: 100%;" src="https://www.youtube.com/embed/7hFrQ-28dR4" title="Student Innovation Project Pitch Part 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    
-                    <p style="text-align: center; margin-top: var(--spacing-md); color: var(--text-light); font-size: 0.95rem;">
-                        <em>Week 4 Student Innovation Project Pitch - Comprehensive system design and prototype overview</em>
-                    </p>
-                </div>
-            </div>
-
-            <div class="prototype-notes" style="margin-top: var(--spacing-xl);">
-                <h3>Prototype Overview</h3>
-                <ul>
-                    <li>Working proof-of-concept with Arduino and LoRa modules</li>
-                    <li>Demonstrates remote shutdown capability over 100+ meters</li>
-                    <li>Shows enclosure design and component integration</li>
-                    <li>Displays status feedback and safety features</li>
-                    <li>Cost breakdown analysis ($300 total)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="sip-section">
-        <div class="container">
-            <h2>How It Works - Technical Details</h2>
-            
-            <div class="tech-specs">
-                <div class="spec">
-                    <strong>LoRa Modules</strong><br>
-                    915 MHz (US) sub-GHz frequency for long-range penetration
-                </div>
-                <div class="spec">
-                    <strong>Arduino Receiver</strong><br>
-                    Decodes signal and verifies command validity
-                </div>
-                <div class="spec">
-                    <strong>Relay Module</strong><br>
-                    Physically cuts power/signal to engine starter
-                </div>
-                <div class="spec">
-                    <strong>Status Feedback</strong><br>
-                    Confirmation signal sent back to operator
-                </div>
-            </div>
-
-            <h3>System Architecture</h3>
-            <div class="architecture">
-                <div class="arch-box">
-                    <h4>🏠 Base Station (Your Home)</h4>
-                    <ul>
-                        <li>Laptop / Raspberry Pi</li>
-                        <li>LoRa Transmitter Module</li>
-                        <li>GUI Application (Python)</li>
-                        <li>USB Power</li>
-                    </ul>
-                </div>
-                <div class="arch-arrow">↔</div>
-                <div class="arch-box">
-                    <h4>⚙️ Motor Site (Remote Well)</h4>
-                    <ul>
-                        <li>Arduino Nano Microcontroller</li>
-                        <li>LoRa Receiver Module</li>
-                        <li>5V Relay Module (SPDT)</li>
-                        <li>12V Battery Power</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TECHNICAL SPECIFICATIONS -->
-    <section id="technical" class="sip-section alternate">
-        <div class="container">
-            <h2>Technical Specifications</h2>
-            
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <h4>Hardware</h4>
-                    <p>HopeRF RFM95W or Adafruit LoRa Feather, Arduino Nano/Uno, 5V SPDT Relay</p>
-                </div>
-                <div class="spec-card">
-                    <h4>Range</h4>
-                    <p>10–15 miles Line-of-Sight with high-gain antennas</p>
-                </div>
-                <div class="spec-card">
-                    <h4>Frequency</h4>
-                    <p>915 MHz (US) - Sub-GHz penetration through obstacles</p>
-                </div>
-                <div class="spec-card">
-                    <h4>Power Consumption</h4>
-                    <p>Ultra-low: ~2mA standby, 100mA active transmission</p>
-                </div>
-                <div class="spec-card">
-                    <h4>Battery Life</h4>
-                    <p>6+ months per charge with 12V li-ion battery</p>
-                </div>
-                <div class="spec-card">
-                    <h4>Total Cost</h4>
-                    <p>Under $300 - 10x cheaper than commercial systems</p>
-                </div>
-                <div class="spec-card">
-                    <h4>Communication Protocol</h4>
-                    <p>Encrypted LoRaWAN with error checking</p>
-                </div>
-                <div class="spec-card">
-                    <h4>Response Time</h4>
-                    <p>2-5 seconds from command to engine shutdown</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KEY FEATURES -->
-    <section class="sip-section">
-        <div class="container">
-            <h2>Key Features</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <h3>🔐 Secure</h3>
-                    <p>Encrypted LoRa communication prevents unauthorized access or interference</p>
-                </div>
-                <div class="feature">
-                    <h3>💰 Affordable</h3>
-                    <p>Total cost under $300 - significantly cheaper than commercial alternatives</p>
-                </div>
-                <div class="feature">
-                    <h3>🌐 Off-Grid</h3>
-                    <p>No internet, cellular, or cloud connection required</p>
-                </div>
-                <div class="feature">
-                    <h3>⚡ Low Power</h3>
-                    <p>Battery-powered operation lasts 6+ months on a single charge</p>
-                </div>
-                <div class="feature">
-                    <h3>🔧 Flexible</h3>
-                    <p>Works with gas or electric wells - adaptable to existing systems</p>
-                </div>
-                <div class="feature">
-                    <h3>🛡️ Reliable</h3>
-                    <p>Minimal moving parts and proven LoRa technology for remote operations</p>
-                </div>
-                <div class="feature">
-                    <h3>📡 Long Range</h3>
-                    <p>10-15 mile coverage covers most agricultural operations</p>
-                </div>
-                <div class="feature">
-                    <h3>🔄 Scalable</h3>
-                    <p>Add multiple wells without infrastructure changes or extra costs</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RELEVANT COURSES -->
-    <section class="sip-section alternate">
-        <div class="container">
-            <h2>Relevant Educational Courses</h2>
-            <p class="section-intro">This project incorporates knowledge from UAT coursework:</p>
-            <div class="courses">
-                <span class="course-badge">NTW245 Mobile Security & Exploitation</span>
-                <span class="course-badge">NTW102 Foundations of Networking</span>
-                <span class="course-badge">NTW103 Introduction to Network Engineering</span>
-                <span class="course-badge">NTW220 Linux I for Technologists</span>
-                <span class="course-badge">NTW233 IoT Architecture & Security</span>
-                <span class="course-badge">NTW275 Network Infrastructure Design</span>
-                <span class="course-badge">DBM100 3D Build Tools</span>
-                <span class="course-badge">RBT125 Introduction to Robotics</span>
-                <span class="course-badge">RBT131 Digital Logic Basic Processor Design</span>
-                <span class="course-badge">RBT205 Mechanisms & Materials</span>
-                <span class="course-badge">RBT173 Introduction to Microcontrollers</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECT RESOURCES & GITHUB -->
-    <section id="resources" class="sip-section">
-        <div class="container">
-            <h2>Project Resources & GitHub</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <h3>📚 LoRa Communication Resources</h3>
-                    <p><strong>HackaDay:</strong> <a href="https://hackaday.io/project/168013-lora-upto-12km-arduino" target="_blank">LoRa up to 12km Arduino</a></p>
-                    <p><strong>Zbotic Tutorial:</strong> <a href="https://zbotic.in/lora-module-sx1278-long-range-iot-communication-tutorial/" target="_blank">LoRa Module SX1278 Tutorial</a></p>
-                    <p><strong>Adafruit Docs:</strong> <a href="https://learn.adafruit.com/" target="_blank">Adafruit Learning System</a></p>
-                </div>
-                <div class="resource-card">
-                    <h3>⚙️ Hardware Reference</h3>
-                    <p><strong>Valley Irrigation:</strong> <a href="https://www.rdoequipment.com/" target="_blank">RDO Equipment - Agricultural Hardware</a></p>
-                    <p><strong>Arduino:</strong> <a href="https://www.arduino.cc/" target="_blank">Arduino Official Documentation</a></p>
-                    <p><strong>Component Datasheets:</strong> Available in project repository</p>
-                </div>
-                <div class="resource-card">
-                    <h3>💻 GitHub Repository</h3>
-                    <p><strong>Complete Project:</strong> <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">Irrigation Well Control System</a></p>
-                    <p>Includes:</p>
-                    <ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
-                        <li>Arduino source code</li>
-                        <li>Electrical schematics</li>
-                        <li>3D enclosure models</li>
-                        <li>Documentation & guides</li>
-                        <li>Bill of Materials (BOM)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DOCUMENTATION -->
-    <section class="sip-section alternate">
-        <div class="container">
-            <h2>Student Innovation Project Documentation</h2>
-            <div class="docs-grid">
-                <div class="doc-card">
-                    <h3>📋 Project Brief (Week 4)</h3>
-                    <p>Detailed project breakdown including problem statement, innovation claim, and technical approach.</p>
-                    <p><em>Document link or PDF embed will be added here</em></p>
-                </div>
-                <div class="doc-card">
-                    <h3>📊 Innovation Brief</h3>
-                    <p>Complete documentation of the innovation claim with market analysis and competitive comparison.</p>
-                    <p><em>Full text and supporting materials available upon request</em></p>
-                </div>
-                <div class="doc-card">
-                    <h3>📄 Bill of Materials</h3>
-                    <p>Complete component list with part numbers, suppliers, and costs ($300 total).</p>
-                    <p><em>Available in GitHub repository</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Connor Queen</h4>
-                    <p>IoT & Robotics Engineering Student</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sip.html">Student Innovation Project</a></li>
-                        <li><a href="boards.html">Boards</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/connorcqueen-lgtm" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Connor Queen. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<!-- YouTube Embed -->
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="600" src="https://www.youtube.com/embed/7hFrQ-28dR4" style="border-radius: 12px; max-width: 100%;" title="Student Innovation Project Pitch Part 2" width="100%"></iframe>
+<p style="text-align: center; margin-top: var(--spacing-md); color: var(--text-light); font-size: 0.95rem;">
+<em>Week 4 Student Innovation Project Pitch - Comprehensive system design and prototype overview</em>
+</p>
+</div>
+</div>
+<div class="prototype-notes" style="margin-top: var(--spacing-xl);">
+<h3>Prototype Overview</h3>
+<ul>
+<li>Working proof-of-concept with Arduino and LoRa modules</li>
+<li>Demonstrates remote command and relay operation on the bench</li>
+<li>Shows enclosure design and component integration</li>
+<li>Displays simulated isolated input feedback; safety integration remains pending</li>
+<li>Cost estimate pending a complete bill of materials</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section class="sip-section">
+<div class="container"><h2>How the Bench Prototype Works</h2><div class="visuals-grid"><div class="visual-card"><h3>1. Touchscreen request</h3><p>Nextion Enhanced touchscreen sends WELL_STOP to the home Arduino Nano.</p></div><div class="visual-card"><h3>2. LoRa command</h3><p>Home Nano transmits a plain-text UART LoRa message. Authentication and encryption have not been implemented.</p></div><div class="visual-card"><h3>3. Relay pulse</h3><p>Well Nano activates relay D4 for three seconds, then returns ACK_RELAY_PULSED. This does not confirm engine shutdown.</p></div><div class="visual-card"><h3>4. Simulated feedback</h3><p>Bench optocoupler D5 state changes generate MURPHY_TRIPPED or MURPHY_RESET messages. Actual Murphy integration is pending.</p></div></div></div>
+</section>
+<!-- TECHNICAL SPECIFICATIONS -->
+<section class="sip-section" id="progress"><div class="container"><h2>Prototype Progress &amp; Next Steps</h2><ul><li><strong>Completed:</strong> Direct two-way LoRa link, touchscreen command, relay pulse and acknowledgment, simulated isolated input feedback, and firmware repository.</li><li><strong>In progress:</strong> Murphy 117 shutdown-request and independent status-sensing interface design.</li><li><strong>Not yet tested:</strong> Actual engine shutdown, engine RPM feedback, long-range radio performance, power transients, environmental durability, and authenticated control.</li></ul><p><strong>Safety:</strong> This is a student bench prototype, not a production-ready or safety-certified engine shutdown controller. Original shutdown protections must remain functional independently.</p></div></section><section class="sip-section alternate" id="technical">
+<div class="container"><h2>Technical Specifications — Tested Prototype</h2><div class="specs-grid"><div class="spec-item"><h3>Controllers</h3><p>Two Arduino Nano ATmega328P boards</p></div><div class="spec-item"><h3>Radio</h3><p>DX-LR32-900T22D(T0), SX1262-based UART LoRa modules, configured near 915 MHz at 9600 baud UART</p></div><div class="spec-item"><h3>User Interface</h3><p>Nextion Enhanced 3.5-inch NX4832K035 touchscreen</p></div><div class="spec-item"><h3>Relay</h3><p>5 V relay board; D4 HIGH energizes relay for 3 seconds</p></div><div class="spec-item"><h3>Feedback</h3><p>3–5 V input optocoupler; D5 active LOW; tested with simulated signal</p></div><div class="spec-item"><h3>Protocol</h3><p>Direct UART LoRa messages: WELL_STOP, ACK_RELAY_PULSED, MURPHY_TRIPPED, MURPHY_RESET. No encryption/authentication implemented.</p></div><div class="spec-item"><h3>Range &amp; Cost</h3><p>Field range and final bill of materials not yet verified</p></div><div class="spec-item"><h3>Validation</h3><p>Bench-tested electronics only; real engine shutdown, electrical transients, and fail-safe behavior not yet validated</p></div></div></div>
+</section>
+<!-- KEY FEATURES -->
+<!-- RELEVANT COURSES -->
+<section class="sip-section alternate">
+<div class="container">
+<h2>Relevant Educational Courses</h2>
+<p class="section-intro">This project incorporates knowledge from UAT coursework:</p>
+<div class="courses">
+<span class="course-badge">NTW245 Mobile Security &amp; Exploitation</span>
+<span class="course-badge">NTW102 Foundations of Networking</span>
+<span class="course-badge">NTW103 Introduction to Network Engineering</span>
+<span class="course-badge">NTW220 Linux I for Technologists</span>
+<span class="course-badge">NTW233 IoT Architecture &amp; Security</span>
+<span class="course-badge">NTW275 Network Infrastructure Design</span>
+<span class="course-badge">DBM100 3D Build Tools</span>
+<span class="course-badge">RBT125 Introduction to Robotics</span>
+<span class="course-badge">RBT131 Digital Logic Basic Processor Design</span>
+<span class="course-badge">RBT205 Mechanisms &amp; Materials</span>
+<span class="course-badge">RBT173 Introduction to Microcontrollers</span>
+</div>
+</div>
+</section>
+<!-- PROJECT RESOURCES & GITHUB -->
+<section class="sip-section" id="resources">
+<div class="container">
+<h2>Project Resources &amp; GitHub</h2>
+<div class="resources-grid">
+<div class="resource-card">
+<h3>📚 LoRa Communication Resources</h3>
+<p><strong>HackaDay:</strong> <a href="https://hackaday.io/project/168013-lora-upto-12km-arduino" target="_blank">LoRa up to 12km Arduino</a></p>
+<p><strong>Zbotic Tutorial:</strong> <a href="https://zbotic.in/lora-module-sx1278-long-range-iot-communication-tutorial/" target="_blank">LoRa Module SX1278 Tutorial</a></p>
+<p><strong>Adafruit Docs:</strong> <a href="https://learn.adafruit.com/" target="_blank">Adafruit Learning System</a></p>
+</div>
+<div class="resource-card">
+<h3>⚙️ Hardware Reference</h3>
+<p><strong>Valley Irrigation:</strong> <a href="https://www.rdoequipment.com/" target="_blank">RDO Equipment - Agricultural Hardware</a></p>
+<p><strong>Arduino:</strong> <a href="https://www.arduino.cc/" target="_blank">Arduino Official Documentation</a></p>
+<p><strong>Component Datasheets:</strong> Available in project repository</p>
+</div>
+<div class="resource-card">
+<h3>💻 GitHub Repository</h3>
+<p><strong>Complete Project:</strong> <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">Irrigation Well Control System</a></p>
+<p>Includes: Arduino firmware and website files. Schematics, enclosure models, and a verified bill of materials are not yet included.</p>
+<ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
+<li>Arduino source code</li>
+<li>Electrical schematics</li>
+<li>3D enclosure models</li>
+<li>Documentation &amp; guides</li>
+<li>Bill of Materials (BOM)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- DOCUMENTATION -->
+<section class="sip-section alternate">
+<div class="container"><h2>Project Documentation</h2><p>Current firmware and the SIP website are available in the <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control">GitHub repository</a>. A finalized bill of materials, installation-grade electrical schematic, and enclosure files are not yet published.</p><p>The embedded design-phase presentation above documents an earlier stage of the project and may not reflect the current hardware.</p></div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4>Connor Queen</h4>
+<p>IoT &amp; Robotics Engineering Student</p>
+</div>
+<div class="footer-section">
+<h4>Navigation</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="sip.html">Student Innovation Project</a></li>
+<li><a href="boards.html">Boards</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Follow</h4>
+<div class="social-links">
+<a href="https://github.com/connorcqueen-lgtm" target="_blank" title="GitHub">
+<i class="fab fa-github"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Connor Queen. All rights reserved.</p>
+</div>
+</div>
+</footer>
 </body>
 </html>
