@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Student Innovation Project - Remote Irrigation Well Control | Connor Queen</title>
+<title>Well Killer | Student Innovation Project | Connor Queen</title>
 <link href="styles.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-</head>
+<meta content="Well Killer SIP: bench-tested two-way LoRa remote irrigation well control prototype, relay activation, status feedback, and remaining field validation." name="description"/></head>
 <body>
 <!-- HEADER & NAVIGATION -->
 <header>
@@ -28,146 +27,31 @@
 </nav>
 </header>
 <!-- SIP HERO SECTION -->
-<section class="sip-hero">
-<div class="hero-content">
-<h1>Student Innovation Project (SIP)</h1>
-<p>Remote Irrigation Well Control System</p>
-</div>
-</section>
+
 <!-- TABLE OF CONTENTS -->
-<section class="sip-section">
-<div class="container">
-<h2>Project Overview</h2>
-<p class="section-intro">A LoRa-based remote irrigation-well shutdown-request prototype. Bench electronics are working; engine integration and field validation are still in progress.</p>
-<div class="toc-box">
-<h3>Quick Navigation:</h3>
-<ul class="toc-links">
-<li><a href="#project-description">Project Description</a></li>
-<li><a href="#innovation-claim">Innovation Claim</a></li>
-<li><a href="#progress">Prototype Progress</a></li><li><a href="#design-visuals">Design &amp; Visuals</a></li>
-<li><a href="#prototype">Design Phase Prototype</a></li>
-<li><a href="#technical">Technical Specifications</a></li>
-<li><a href="#resources">Resources &amp; GitHub</a></li>
-</ul>
-</div>
-</div>
-</section>
+
 <!-- PROJECT DESCRIPTION -->
-<section class="sip-section" id="project-description">
-<div class="container"><h2>Project Description</h2><div class="description-content"><p><strong>Problem:</strong> Traveling to an irrigation engine during lightning or severe weather creates avoidable exposure. Some locations also lack dependable cellular coverage.</p><p><strong>Proposed solution:</strong> A direct LoRa link between a home touchscreen controller and a remote Arduino-based shutdown-request unit. The design aims to interface with an existing Murphy 117 and Swichgage safety circuit without replacing those protections.</p><p><strong>Current status:</strong> A bench prototype has demonstrated touchscreen commands, bidirectional LoRa messaging, a three-second relay pulse, and simulated isolated trip-input feedback. The Murphy/engine interface and actual shutdown verification remain incomplete.</p></div></div>
-</section>
+
 <!-- INNOVATION CLAIM -->
-<section class="sip-section alternate" id="innovation-claim">
-<div class="container"><h2>Innovation Claim</h2><div class="innovation-card"><h3>Low-infrastructure remote shutdown for agricultural wells</h3><p>The project combines accessible embedded hardware, direct sub-GHz LoRa communication, a local touchscreen, and a planned interface to an existing Murphy shutdown system. It is intended to reduce trips to remote well sites during hazardous weather without requiring cellular service at the well.</p><div class="innovation-grid"><div class="innovation-item"><h4>Demonstrated</h4><ul><li>Two-way LoRa communication between Arduino Nano controllers</li><li>Nextion touchscreen shutdown command</li><li>Three-second relay actuation and acknowledgment</li><li>Isolated optocoupler input tested with a simulated 5 V signal</li></ul></div><div class="innovation-item"><h4>Still to validate</h4><ul><li>Safe, compatible Murphy 117 interface</li><li>Independent proof of engine stopped/running state</li><li>Radio range, interference resistance, and message authentication</li><li>Field power protection, weatherproofing, and complete cost estimate</li></ul></div></div></div></div>
-</section>
+
 <!-- DESIGN & VISUALS -->
-<section class="sip-section" id="design-visuals">
-<div class="container"><h2>Design &amp; Wiring Overview</h2><p class="section-intro">Current bench wiring and proposed field architecture. These are pin references, not a certified engine-control schematic.</p><div class="visuals-grid"><div class="visual-card"><h3>Home Controller</h3><ul><li>Arduino Nano and Nextion Enhanced 3.5-inch display</li><li>Nextion TX → Nano D2; Nextion RX ← Nano D3</li><li>LoRa TXD → Nano D10; LoRa RXD ← Nano D11</li><li>Shared logic ground; regulated 5 V power</li></ul></div><div class="visual-card"><h3>Well Controller</h3><ul><li>Arduino Nano and DX-LR32-900T22D UART LoRa</li><li>LoRa TXD → Nano D10; RXD ← Nano D11</li><li>Relay input IN1 → Nano D4 (active HIGH on tested board)</li><li>Optocoupler OUT → Nano D5 (active LOW with INPUT_PULLUP)</li></ul></div><div class="visual-card"><h3>Planned Field Interface</h3><ul><li>Fused, automotive-rated 12 V to 5 V conversion</li><li>Relay dry contacts proposed for a shutdown request in parallel with existing protection, subject to verification</li><li>3–5 V optocoupler input requires a correctly rated, isolated Murphy sensing interface</li><li>Existing Swichgage and emergency-stop functions must remain independent</li></ul></div></div><p><strong>Important:</strong> No direct connection from 12–13 V Murphy wiring to Nano D5 or the 3–5 V optocoupler input. A relay pulse acknowledgment is not proof that the engine has stopped.</p></div>
-</section>
+
 <!-- DESIGN PHASE PROTOTYPE VIDEO -->
-<section class="sip-section alternate" id="prototype">
-<div class="container">
-<h2>Design Phase Prototype</h2>
-<p class="section-intro">Week 4 Student Innovation Project Pitch demonstrating the project concept and system design</p>
-<div class="video-container">
-<div class="video-wrapper">
-<p style="text-align: center; color: var(--text-light); margin-bottom: var(--spacing-lg); font-weight: 600;">
-                        Student Innovation Project Pitch Part 2 - System Design &amp; Prototype Overview
-                    </p>
-<!-- YouTube Embed -->
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="600" src="https://www.youtube.com/embed/7hFrQ-28dR4" style="border-radius: 12px; max-width: 100%;" title="Student Innovation Project Pitch Part 2" width="100%"></iframe>
-<p style="text-align: center; margin-top: var(--spacing-md); color: var(--text-light); font-size: 0.95rem;">
-<em>Week 4 Student Innovation Project Pitch - Comprehensive system design and prototype overview</em>
-</p>
-</div>
-</div>
-<div class="prototype-notes" style="margin-top: var(--spacing-xl);">
-<h3>Prototype Overview</h3>
-<ul>
-<li>Working proof-of-concept with Arduino and LoRa modules</li>
-<li>Demonstrates remote command and relay operation on the bench</li>
-<li>Shows enclosure design and component integration</li>
-<li>Displays simulated isolated input feedback; safety integration remains pending</li>
-<li>Cost estimate pending a complete bill of materials</li>
-</ul>
-</div>
-</div>
-</section>
+
 <!-- HOW IT WORKS -->
-<section class="sip-section">
-<div class="container"><h2>How the Bench Prototype Works</h2><div class="visuals-grid"><div class="visual-card"><h3>1. Touchscreen request</h3><p>Nextion Enhanced touchscreen sends WELL_STOP to the home Arduino Nano.</p></div><div class="visual-card"><h3>2. LoRa command</h3><p>Home Nano transmits a plain-text UART LoRa message. Authentication and encryption have not been implemented.</p></div><div class="visual-card"><h3>3. Relay pulse</h3><p>Well Nano activates relay D4 for three seconds, then returns ACK_RELAY_PULSED. This does not confirm engine shutdown.</p></div><div class="visual-card"><h3>4. Simulated feedback</h3><p>Bench optocoupler D5 state changes generate MURPHY_TRIPPED or MURPHY_RESET messages. Actual Murphy integration is pending.</p></div></div></div>
-</section>
+
 <!-- TECHNICAL SPECIFICATIONS -->
-<section class="sip-section" id="latest-video-update">
-<div class="container">
-<h2>Latest SIP Video Update</h2>
-<p class="section-intro">November 2026 project update — the latest video documenting progress on the Well Killer irrigation-well control prototype.</p>
-<div class="video-container"><div class="video-wrapper">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="600" loading="lazy" src="https://www.youtube.com/embed/1SOf8E1o5Pg" style="border-radius: 12px; max-width: 100%;" title="Well Killer — Latest SIP Project Update (November 2026)" width="100%"></iframe>
-<p style="text-align: center; margin-top: var(--spacing-md); color: var(--text-light); font-size: 0.95rem;">Watch the <a href="https://youtu.be/1SOf8E1o5Pg" rel="noopener noreferrer" target="_blank">latest project update on YouTube</a>.</p>
-</div></div>
-</div></section><section class="sip-section" id="progress"><div class="container"><h2>Prototype Progress &amp; Next Steps</h2><ul><li><strong>Completed:</strong> Direct two-way LoRa link, touchscreen command, relay pulse and acknowledgment, simulated isolated input feedback, and firmware repository.</li><li><strong>In progress:</strong> Murphy 117 shutdown-request and independent status-sensing interface design.</li><li><strong>Not yet tested:</strong> Actual engine shutdown, engine RPM feedback, long-range radio performance, power transients, environmental durability, and authenticated control.</li></ul><p><strong>Safety:</strong> This is a student bench prototype, not a production-ready or safety-certified engine shutdown controller. Original shutdown protections must remain functional independently.</p></div></section><section class="sip-section alternate" id="technical">
-<div class="container"><h2>Technical Specifications — Tested Prototype</h2><div class="specs-grid"><div class="spec-item"><h3>Controllers</h3><p>Two Arduino Nano ATmega328P boards</p></div><div class="spec-item"><h3>Radio</h3><p>DX-LR32-900T22D(T0), SX1262-based UART LoRa modules, configured near 915 MHz at 9600 baud UART</p></div><div class="spec-item"><h3>User Interface</h3><p>Nextion Enhanced 3.5-inch NX4832K035 touchscreen</p></div><div class="spec-item"><h3>Relay</h3><p>5 V relay board; D4 HIGH energizes relay for 3 seconds</p></div><div class="spec-item"><h3>Feedback</h3><p>3–5 V input optocoupler; D5 active LOW; tested with simulated signal</p></div><div class="spec-item"><h3>Protocol</h3><p>Direct UART LoRa messages: WELL_STOP, ACK_RELAY_PULSED, MURPHY_TRIPPED, MURPHY_RESET. No encryption/authentication implemented.</p></div><div class="spec-item"><h3>Range &amp; Cost</h3><p>Field range and final bill of materials not yet verified</p></div><div class="spec-item"><h3>Validation</h3><p>Bench-tested electronics only; real engine shutdown, electrical transients, and fail-safe behavior not yet validated</p></div></div></div>
-</section>
+
 <!-- KEY FEATURES -->
+
 <!-- RELEVANT COURSES -->
-<section class="sip-section alternate">
-<div class="container">
-<h2>Relevant Educational Courses</h2>
-<p class="section-intro">This project incorporates knowledge from UAT coursework:</p>
-<div class="courses">
-<span class="course-badge">NTW245 Mobile Security &amp; Exploitation</span>
-<span class="course-badge">NTW102 Foundations of Networking</span>
-<span class="course-badge">NTW103 Introduction to Network Engineering</span>
-<span class="course-badge">NTW220 Linux I for Technologists</span>
-<span class="course-badge">NTW233 IoT Architecture &amp; Security</span>
-<span class="course-badge">NTW275 Network Infrastructure Design</span>
-<span class="course-badge">DBM100 3D Build Tools</span>
-<span class="course-badge">RBT125 Introduction to Robotics</span>
-<span class="course-badge">RBT131 Digital Logic Basic Processor Design</span>
-<span class="course-badge">RBT205 Mechanisms &amp; Materials</span>
-<span class="course-badge">RBT173 Introduction to Microcontrollers</span>
-</div>
-</div>
-</section>
+
 <!-- PROJECT RESOURCES & GITHUB -->
-<section class="sip-section" id="resources">
-<div class="container">
-<h2>Project Resources &amp; GitHub</h2>
-<div class="resources-grid">
-<div class="resource-card">
-<h3>📚 LoRa Communication Resources</h3>
-<p><strong>HackaDay:</strong> <a href="https://hackaday.io/project/168013-lora-upto-12km-arduino" target="_blank">LoRa up to 12km Arduino</a></p>
-<p><strong>Zbotic Tutorial:</strong> <a href="https://zbotic.in/lora-module-sx1278-long-range-iot-communication-tutorial/" target="_blank">LoRa Module SX1278 Tutorial</a></p>
-<p><strong>Adafruit Docs:</strong> <a href="https://learn.adafruit.com/" target="_blank">Adafruit Learning System</a></p>
-</div>
-<div class="resource-card">
-<h3>⚙️ Hardware Reference</h3>
-<p><strong>Valley Irrigation:</strong> <a href="https://www.rdoequipment.com/" target="_blank">RDO Equipment - Agricultural Hardware</a></p>
-<p><strong>Arduino:</strong> <a href="https://www.arduino.cc/" target="_blank">Arduino Official Documentation</a></p>
-<p><strong>Component Datasheets:</strong> Available in project repository</p>
-</div>
-<div class="resource-card">
-<h3>💻 GitHub Repository</h3>
-<p><strong>Complete Project:</strong> <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" target="_blank">Irrigation Well Control System</a></p>
-<p>Includes: Arduino firmware and website files. Schematics, enclosure models, and a verified bill of materials are not yet included.</p>
-<ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
-<li>Arduino source code</li>
-<li>Electrical schematics</li>
-<li>3D enclosure models</li>
-<li>Documentation &amp; guides</li>
-<li>Bill of Materials (BOM)</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+
 <!-- DOCUMENTATION -->
-<section class="sip-section alternate">
-<div class="container"><h2>Project Documentation</h2><p>Current firmware and the SIP website are available in the <a href="https://github.com/connorcqueen-lgtm/irrigation-well-control">GitHub repository</a>. A finalized bill of materials, installation-grade electrical schematic, and enclosure files are not yet published.</p><p>The embedded design-phase presentation above documents an earlier stage of the project and may not reflect the current hardware.</p></div>
-</section>
+
 <!-- FOOTER -->
-<footer>
+<section class="sip-hero"><div class="hero-content"><h1>Student Innovation Project (SIP)</h1><p>Well Killer — LoRa Remote Irrigation Well Shutdown</p></div></section><section class="sip-section"><div class="container"><h2>Project Overview</h2><p class="section-intro">Well Killer is a prototype designed to let an irrigation operator request a remote well shutdown during hazardous weather without traveling to the well site. The current prototype demonstrates two-way wireless commands, relay activation, and simulated Murphy switch status feedback. An actual engine shutdown has not yet been tested.</p><div class="toc-box"><h3>Quick Navigation</h3><ul class="toc-links"><li><a href="#project-description">Problem &amp; Approach</a></li><li><a href="#innovation-claim">Innovation Claim</a></li><li><a href="#progress">Prototype Progress</a></li><li><a href="#design-visuals">System Design</a></li><li><a href="#prototype">Presentation Video</a></li><li><a href="#technical">Technical Details</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#resources">Source Code</a></li></ul></div></div></section><section class="sip-section alternate" id="project-description"><div class="container"><h2>Problem &amp; Approach</h2><div class="description-content"><p>When storms threaten an irrigated field, operators may need to shut down remote wells quickly to avoid flooding crops or causing equipment damage. Reaching a well in lightning or severe weather introduces a safety risk, while some agricultural sites have poor cellular coverage.</p><div class="problem-box"><h3>Project Goal</h3><p>Develop a locally controlled, long-range radio shutdown system using Arduino microcontrollers and LoRa modules. The goal is to send a shutdown request from a home station and receive meaningful feedback from the well-side equipment without relying on cellular service or a cloud subscription.</p></div><p><strong>Safety boundary:</strong> The system is intended to interface with an existing Murphy shutdown arrangement, not replace the engine's independent protective controls. Live-engine integration requires appropriate electrical verification and safe testing.</p></div></div></section><section class="sip-section" id="innovation-claim"><div class="container"><h2>Innovation Claim</h2><div class="innovation-card"><h3>Practical Remote Shutdown for Cellular Dead Zones</h3><p>The project combines a local touchscreen interface, two-way LoRa communication, and an isolated relay interface to explore a lower-infrastructure alternative for remote irrigation well control.</p><div class="innovation-grid"><div class="innovation-item"><h4>Design Priorities</h4><ul><li>Local radio communication without internet or cellular service</li><li>Touchscreen control from the home station</li><li>Confirmation that a relay command was executed</li><li>Status feedback from a well-side input</li></ul></div><div class="innovation-item"><h4>Still to Validate</h4><ul><li>Real-world radio range and reliability</li><li>Installed power consumption and weatherproofing</li><li>Safe integration with the Murphy switch</li><li>Verified engine shutdown and feedback</li><li>Final bill of materials and cost comparison</li></ul></div></div></div></div></section><section class="sip-section alternate" id="progress"><div class="container"><h2>Current Prototype Progress</h2><p class="section-intro">Bench-tested functionality as of November 2026. Results below distinguish confirmed actions from proposed operation.</p><div class="features-grid"><div class="feature"><h3>✓ Two-Way LoRa Communication</h3><p>The home and well-side Arduino Nano units exchange commands and response messages through UART LoRa modules.</p></div><div class="feature"><h3>✓ Touchscreen Shutdown Request</h3><p>A Nextion touchscreen sends a WELL_STOP command from the home unit to the well unit.</p></div><div class="feature"><h3>✓ Relay Pulse and Acknowledgment</h3><p>The well unit activates its relay for approximately three seconds and replies ACK_RELAY_PULSED. The home display reports “RELAY ACTIVATED,” not “ENGINE STOPPED.”</p></div><div class="feature"><h3>✓ Simulated Status Feedback</h3><p>A simulated optocoupler input produces MURPHY_TRIPPED and MURPHY_RESET messages, which update the home station.</p></div><div class="feature"><h3>○ Live Murphy Integration</h3><p>The relay has not yet been tested as part of a complete, installed engine shutdown circuit.</p></div><div class="feature"><h3>○ Field Validation</h3><p>Radio range, installed electrical behavior, actual engine-stop confirmation, and long-term reliability remain unverified.</p></div></div></div></section><section class="sip-section" id="design-visuals"><div class="container"><h2>System Design</h2><p class="section-intro">The current architecture uses two Arduino Nano stations and serial-connected LoRa radios. The diagram below describes the tested bench arrangement; it is not a complete electrical schematic.</p><div class="architecture"><div class="arch-box"><h4>Home Station</h4><ul><li>Arduino Nano (Old Bootloader)</li><li>Nextion Enhanced 3.5-inch touchscreen (NX4832K035)</li><li>DX-LR32-900T22D(T0) LoRa UART module</li><li>Touchscreen sends shutdown command and shows acknowledgments</li></ul></div><div class="arch-arrow">↔</div><div class="arch-box"><h4>Well Station</h4><ul><li>Arduino Nano (Old Bootloader)</li><li>DX-LR32-900T22D(T0) LoRa UART module</li><li>Active-HIGH relay module</li><li>Optocoupler input for status feedback testing</li></ul></div></div><div class="visuals-grid"><div class="visual-card"><h3>Home Station Connections</h3><div class="visual-placeholder"><p><strong>Nextion TX → Nano D2</strong><br/><strong>Nextion RX ← Nano D3</strong><br/><strong>LoRa TXD → Nano D10</strong><br/><strong>LoRa RXD ← Nano D11</strong><br/>Serial communication: 9600 baud</p></div></div><div class="visual-card"><h3>Well Station Connections</h3><div class="visual-placeholder"><p><strong>LoRa TXD → Nano D10</strong><br/><strong>LoRa RXD ← Nano D11</strong><br/><strong>Relay IN1 → Nano D4</strong><br/><strong>Optocoupler OUT → Nano D5</strong><br/>Input uses INPUT_PULLUP; active LOW</p></div></div><div class="visual-card"><h3>Shutdown Interface — Proposed</h3><div class="visual-placeholder"><p>The intended design uses an isolated relay contact in parallel with the manual Murphy shutdown trigger. The relay pulse is bench-tested; the full Murphy/engine connection is <strong>not yet tested</strong>.</p></div></div><div class="visual-card"><h3>Optocoupler Safety Note</h3><div class="visual-placeholder"><p>The current optocoupler module is rated for 3–5 V input and was tested using isolated 5 V. It must <strong>not</strong> be connected directly to the 12–13 V Murphy circuit without an appropriately designed interface.</p></div></div></div><h3 style="margin-top:var(--spacing-xl)">Tested Command Flow</h3><div class="operation-flow"><div class="flow-step"><div class="flow-number">1</div><p><strong>Touchscreen</strong><br/>WELL_STOP</p></div><div class="flow-arrow">→</div><div class="flow-step"><div class="flow-number">2</div><p><strong>LoRa Link</strong><br/>Command delivered</p></div><div class="flow-arrow">→</div><div class="flow-step"><div class="flow-number">3</div><p><strong>Well Nano</strong><br/>Relay pulses ~3 s</p></div><div class="flow-arrow">→</div><div class="flow-step"><div class="flow-number">4</div><p><strong>Return Message</strong><br/>ACK_RELAY_PULSED</p></div><div class="flow-arrow">→</div><div class="flow-step"><div class="flow-number">5</div><p><strong>Home Display</strong><br/>RELAY ACTIVATED</p></div></div><p style="margin-top:1rem"><strong>Important:</strong> “RELAY ACTIVATED” confirms the relay action only; it does not verify that an engine stopped.</p></div></section><section class="sip-section alternate" id="prototype"><div class="container"><h2>Design Phase Presentation</h2><p class="section-intro">Earlier SIP pitch explaining the project concept and prototype direction. Some details in this earlier presentation may predate the current hardware and bench tests described above.</p><div class="video-container"><div class="video-wrapper"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" height="500" loading="lazy" src="https://www.youtube.com/embed/7hFrQ-28dR4" style="border-radius:12px;max-width:100%;" title="Student Innovation Project Pitch Part 2" width="100%"></iframe></div></div></div></section><section class="sip-section" id="technical"><div class="container"><h2>Technical Details</h2><div class="specs-grid"><div class="spec-card"><h4>Controllers</h4><p>Arduino Nano at the home and well stations</p></div><div class="spec-card"><h4>Radio Hardware</h4><p>DX-LR32-900T22D(T0), SX1262-based UART LoRa modules</p></div><div class="spec-card"><h4>Radio Configuration</h4><p>915.150 MHz; bandwidth setting 6; spreading factor 11; coding rate setting 1; CRC enabled; IQ setting 1; transmit power setting 22 dBm</p></div><div class="spec-card"><h4>Home Interface</h4><p>Nextion Enhanced 3.5-inch touchscreen, NX4832K035</p></div><div class="spec-card"><h4>Shutdown Output</h4><p>Active-HIGH relay input on well-side D4; approximately 3-second bench-tested pulse</p></div><div class="spec-card"><h4>Status Input</h4><p>Optocoupler output to D5, active LOW; simulated 5 V test input only</p></div><div class="spec-card"><h4>Communication</h4><p>Local point-to-point LoRa messaging over UART; not LoRaWAN</p></div><div class="spec-card"><h4>Security &amp; Reliability</h4><p>Encryption, command authentication, operational range, and production failsafes have not been established</p></div></div></div></section><section class="sip-section alternate" id="next-steps"><div class="container"><h2>Next Steps</h2><div class="description-content"><ol><li>Document and verify the full wiring schematic, power distribution, and electrical isolation.</li><li>Develop an appropriate voltage-safe interface for the actual Murphy status circuit.</li><li>Test the relay and Murphy shutdown connection under controlled, supervised conditions while preserving independent engine protections.</li><li>Confirm engine-stop feedback separately from relay acknowledgment.</li><li>Measure radio range, power use, and failure behavior before considering field deployment.</li></ol><p><strong>Project status:</strong> Working bench prototype; not yet validated as an installed, production-ready well shutdown system.</p></div></div></section><section class="sip-section" id="resources"><div class="container"><h2>Source Code &amp; Project Resources</h2><div class="resources-grid"><div class="resource-card"><h3>GitHub Repository</h3><p><a href="https://github.com/connorcqueen-lgtm/irrigation-well-control" rel="noopener noreferrer" target="_blank">Irrigation Well Control — GitHub</a></p><p>Project website and Arduino firmware for the home and well units. Refer to the current firmware and bench test notes for implementation details.</p></div><div class="resource-card"><h3>Firmware Folders</h3><p><a href="https://github.com/connorcqueen-lgtm/irrigation-well-control/tree/main/firmware/Well_Killer_Home" rel="noopener noreferrer" target="_blank">Home station Arduino sketch</a></p><p><a href="https://github.com/connorcqueen-lgtm/irrigation-well-control/tree/main/firmware/Well_Killer_Well" rel="noopener noreferrer" target="_blank">Well station Arduino sketch</a></p><p>Check repository revisions against the latest tested bench behavior.</p></div><div class="resource-card"><h3>Arduino Documentation</h3><p><a href="https://docs.arduino.cc/" rel="noopener noreferrer" target="_blank">Arduino documentation</a></p><p>Reference material for microcontroller development and hardware integration.</p></div></div></div></section><footer>
 <div class="container">
 <div class="footer-content">
 <div class="footer-section">
@@ -194,7 +78,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2026 Connor Queen. All rights reserved.</p>
+<p>© 2025 Connor Queen. All rights reserved.</p>
 </div>
 </div>
 </footer>
